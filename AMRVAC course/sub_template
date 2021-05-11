@@ -1,0 +1,11 @@
+#!/bin/bash 
+#$ -l h_rt=00:30:00
+#$ -pe mpi 12
+#$ -l rmem=1G
+#$ -j y
+#$ -m bea
+#$ -M email@sheffield.ac.uk
+
+module load mpi/openmpi/2.1.1/gcc-6.2
+
+mpirun -np 12 amrvac -i amrvac.par
